@@ -52,7 +52,7 @@ Fruit.find(function (err, fruits) {
 //  }
 // });
 
-Fruit.deleteOne({name: "Guava"}, function(err){
+Fruit.deleteMany({name: "Peach"}, function(err){
  if (err){
    console.log(err)  ;
  }
