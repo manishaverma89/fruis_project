@@ -23,12 +23,12 @@ const fruitSchema = new mongoose.Schema({
 const Fruit = new mongoose.model("Fruit", fruitSchema); //Now we're ready to create a fruit document
 
 const fruits = new Fruit({
-  name: "Peach",
+  name: "Guava",
   rating: 10,
   review: "A great fruit",
 });
 
-fruits.save();
+// fruits.save();
 
 // Reading from your database with Mongoose (Performing find() which we did in mongo shell)
 
@@ -36,9 +36,29 @@ Fruit.find(function (err, fruits) {
   if (err) {
     console.log(err);
   } else {
-    mongoose.connection.close();
+    // mongoose.connection.close();
     fruits.forEach(function (fruit) {
       console.log(fruit.name);
     });
   }
 });
+
+// Fruit.updateOne({_id: "6271cea81cf2c4e34fdfb9e9"}, {rating: 7}, function(err){
+//  if(err){
+//      console.log(err);
+//  }
+//  else{
+//      console.log("Successfully updated the doucment");
+//  }
+// });
+
+Fruit.deleteOne({name: "Guava"}, function(err){
+ if (err){
+   console.log(err)  ;
+ }
+ else{
+     console.log("Successfully deleted the record");
+ }
+});
+
+ 
