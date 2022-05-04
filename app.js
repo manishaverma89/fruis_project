@@ -60,8 +60,7 @@ Fruit.find(function (err, fruits) {
 });
 
 
-// Create mongoose schema and model for person Schema
-
+// Create mongoose schema and model for person database
 
 const personSchema= new mongoose.Schema({
  name : String,
